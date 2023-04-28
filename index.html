@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideXChange Home Page</title>
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2791784218.js" crossorigin="anonymous"></script> 
+
+</head> 
+<body class="d-flex flex-column">
+
+   <script src="assets/script/main.js" type="module" defer></script>
+    <!-- Navbar -->
+   <nav class="nav-container container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center px-3 shadow">
+      <div class="logo mt-3 mb-3">
+         <a href="index.html" class="text-decoration-none"><img src="assets/images/logo.png" alt=""></a>
+      </div>
+      <div class="links-container mt-3 mb-4 none-res">
+         <a href="index.html" class="px-3 text-decoration-none">Home</a>
+         <a href="shop.html" class="px-3 text-decoration-none">Cars</a>
+         <a href="services.html" class="px-3 text-decoration-none">Services</a>
+         <a href="about.html" class="px-3 text-decoration-none">About</a>
+         
+         <button class="login-Btn" data-bs-toggle="modal" data-bs-target="#sign-in" id="btnlogin">Login </button>
+      </div>
+   </nav>
+
+   <!-- Login modal -->
+   <div class="modal fade" id="sign-in">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header d-flex justify-content-center">
+                  <p class="h3 fw-semibold ms-auto">Login</p>
+                  <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div>
+                          <div class="form-floating my-3">
+                              <input type="loginEmail" placeholder="Email" class="form-control form-control-sm" id="loginEmail">
+                              <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+                          </div>
+                          <div class="form-floating my-3">
+                              <input type="loginPassword" placeholder="password" class="form-control form-control-sm" id="loginPassword">
+                              <label for="username"><i class="fa-solid fa-lock"></i> Password</label>
+                              <span id="loginErr" class="display-err">Incorrect email or password.</span>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer align-self-center d-flex flex-column">
+                  <button id="loginBtn" class="login-btn px-5 my-3">Login</button>
+                  <p>Don't Have An Account? <button class="text border-0 bg-white" data-bs-toggle="modal" data-bs-target="#sign-up">Create Here</button></p>
+              </div>
+          </div>
+      </div>
+   </div>
+   
+   <!-- Login modal End -->
+
+     <!--------------------Create Account Modal--------------------->
+     <div class="modal fade" id="sign-up">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header d-flex justify-content-center">
+                  <p class="h3 ms-auto fw-semibold">Create Account</p>
+                  <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" id="btnclosecreate"></button>
+              </div>
+              <div class="modal-body">
+                  <form action="#" method="">
+                     <div class="information-container">
+                        <div>
+                           <div class="my-3">
+                              <label for="firstName">Firstname</label>
+                              <input type="text" class="form-control form-control-sm" id="firstName" required>
+                           </div>
+                           <div class="my-3">
+                              <label for="middleName">Middle(optional)</label>
+                              <input type="text" class="form-control form-control-sm" id="middleName">
+                           </div>
+                           <div class="my-3">
+                              <label for="lastName">Lastname</label>
+                              <input type="text" class="form-control form-control-sm" id="lastName" required>
+                           </div>
+                        </div>
+                       <div>
+                           <div class="my-3">
+                              <label for="gender">Gender</label>
+                              <select name="gender" id="gender" class="form-control form-control-sm" required>
+                                 <option selected disabled>Choose</option>
+                                 <option value="male">Male</option>
+                                 <option value="female">Female</option>
+                              </select>
+                           </div>
+                           <div class="my-3">
+                              <label for="age">Age</label>
+                              <input type="number" class="form-control form-control-sm" id="age" required>
+                           </div>
+                           <div class="my-3">
+                              <label for="birthDate">Date of birth</label>
+                              <input type="date" class="form-control form-control-sm" id="birthDate" required>
+                           </div>
+                       </div>
+                        <div>
+                           <div class="my-3">
+                              <label for="contactNum">Contact Number</label>
+                              <input type="tel" class="form-control form-control-sm" id="contactNum" required>
+                           </div>
+                           <div class="my-3">
+                              <label for="address">Address</label>
+                              <input type="text" class="form-control form-control-sm" id="address" required>
+                           </div>
+                        </div>
+                        <div class="my-3">
+                           <label for="email">Email</label>
+                           <input type="email" class="form-control form-control-sm" id="email" required>
+                           <span id="emailErr" class="display-err">Email already taken</span>
+                        </div>
+                        <div class="my-3">
+                           <label for="password">Password</label>
+                           <input type="text" class="form-control form-control-sm" id="password" required>
+                           <span id="passwordErr" class="display-err">Password should have at least one upper case, one special character and one numirecal.</span>
+                        </div>
+                        <div class="my-3">
+                           <label for="passwordCopy">Confirm Password</label>
+                           <input type="text" class="form-control form-control-sm" id="passwordCopy" required>
+                           <span id="passwordCopyErr" class="display-err">Password not match</span>
+                        </div>
+                     </div>
+                     <div class="d-flex justify-content-center">
+                        <button id="createBtn" class="create-btn px-5">Create</button>
+                     </div>
+                  </form>
+              </div>
+              <div class="modal-footer align-self-center d-flex flex-column">
+                  <p>Already Have An Account?
+                     <button class="text border-0 bg-white" data-bs-toggle="modal" data-bs-target="#sign-in">Login here</button>
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+       <!--------------------Create Account Modal End--------------------->
+
+   <!-- Header Section -->
+   <section class="header-section mt-5 mb-5 p-5 container-lg d-flex flex-column-reverse flex-md-row justify-content-around align-items-center">
+      <div class="header-text">
+         <p class="fs-3">Welcome To Our Homepage</p>
+         <p class="text-light mb-4 fs-4">RideXChange Community, you are on the right page if you are about to purchase a car in low prices with a benefits.</p>
+         <a href="#" class="text-decoration-none text-center mx-auto" id="BtnGetStarted">Get Started</a>
+      </div>
+      <div class="header-image ps-2 pe-2">
+         <img class="img-fluid mb-5" src="assets/images/car-1.png" alt="Image">
+      </div>
+   </section>
+
+   <!-- Service Section -->
+   <section class="service-section" id="service">
+      <p class="text-center fs-2 mb-5 mt-5 container-lg">Services</p>
+      <div class="service-container container-fluid d-flex flex-column flex-md-row justify-content-evenly align-items-top">
+         <div class="service-item container-sm">
+            <img class="img-fluid" src="assets/images/car-repair.jpg" alt="">
+            <p class="text-light text-center mt-2 fs-4">Car Repair</p>
+            <div class="about text-justify fs-bolder">
+            <p class="text-light text-left">
+               Car repair service provides expert solutions for all types of vehicle repairs using quality parts and experienced mechanics. With transparent pricing and exceptional customer service, your service is dedicated to keeping vehicles running smoothly.
+            </p>
+         </div>
+         </div>
+         <div class="service-item container-sm">
+            <img class="img-fluid" src="assets/images/car-test.jpg" alt="">
+            <p class="text-light text-center mt-2 fs-4">Test Driving</p>
+            <div class="about text-justify fs-bolder">
+               <p class="text-light text-left">
+                Test Driving service is for customer who wants to test the car before purchasing it, it assures the 
+                customer that the car is not defective, and lastly it provides good transaction with the seller.
+               </p>
+            </div>
+         </div>
+         <div class="service-item container-sm">
+            <img class="img-fluid" src="assets/images/car-insurance.jpg" alt="">
+            <p class="text-light text-center mt-2 fs-4">Customer Insurance</p>
+            <div class="about text-justify fs-bolder">
+            <p class="text-light text-left">
+                Customer Insurance, RideXChange assures customer care if unncessary event occurs, it covers (2) years health insurance for our beloved customer.
+            </p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Blogs Section -->
+   <section class="blog-section pt-5">
+      <div class="title mb-3">
+      <p class="fs-2 text-center container-lg">Blogs</p>
+      </div>
+      <div class="blog-container d-flex flex-column">
+         <!-- blog 1 -->
+         <div class="blog-item container-lg d-flex flex-column-reverse flex-md-row align-items-center justify-content-center p-auto mb-5">
+            <div class="container-md item-text text-light p-3 d-flex flex-column">
+               <p class="fs-4">Buying second hand cars</p>
+               <div class="about text-justify fs-bolder mb-3">
+               <p>
+                  Owning a car in the Philippines doesn’t come cheap, so it’s no surprise that second hand cars are as attractive an option as new ones. According to an analysis by Ken Research, it’s expected that our used car market will reach over 1.9 Million sales volume in units by the end of 2023.
+               </p>
+               </div>
+               <a class="text-decoration-none align-items-center mx-auto" href="https://blog.carousell.ph/autos/how-to-buy-a-secondhand-car-philippines/">Read more</a>
+            </div>
+            <div class="item-image">
+               <img class="img-fluid" src="assets/images/blog-img-1.jpg" alt="">
+            </div>
+         </div>
+         <!-- blog 2 -->
+         <div class="blog-item container-lg d-flex flex-column-reverse flex-md-row-reverse align-items-center justify-content-center p-auto mb-5">
+            <div class="container-md item-text text-light p-3 d-flex flex-column">
+               <p class="text-left fs-4">How to avoid them</p>
+               <div class="about text-justify fs-bolder mb-3">
+               <p>
+                  Buying a used car instead of a new one can have its advantages — like potentially saving you money. Unfortunately, buying a used car also comes with a downside — scams. Used-car-buying scams prey on unsuspecting consumers to trick them into buying a vehicle that's unsafe, damaged or older than advertised.
+               </p>
+               </div>
+               <a class="text-decoration-none align-items-center mx-auto" href="https://www.nerdwallet.com/article/loans/auto-loans/4-used-car-buying-scams-and-how-to-avoid-them">Read more</a>
+            </div>
+            <div class="item-image">
+               <img class="img-fluid" src="assets/images/blog-img-2.jpg" alt="">
+            </div>
+         </div>
+         <!-- blog 3 -->
+         <div class="blog-item container-lg d-flex flex-column-reverse flex-md-row align-items-center justify-content-center p-auto mb-5">
+            <div class="container-md item-text text-light p-3 d-flex flex-column">
+               <p class="text-left fs-4">Pros and cons of buying second hand cars</p>
+               <div class="about text-justify fs-bolder mb-3">
+               <p>
+                  To buy a car, choose between new or used. Tighter budgets may prefer used. Here are some pros and cons to consider. Research is key, so check used car websites for low mileage and good prices. Let's get to the list.
+               </p>
+               </div>
+               <a class="text-decoration-none align-items-center mx-auto" href="https://blog.carousell.ph/autos/how-to-buy-a-secondhand-car-philippines/">Read more</a>
+            </div>
+            <div class="item-image">
+               <img class="img-fluid" src="assets/images/blog-img-3.jpg" alt="">
+            </div>
+         </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Testimonial section -->
+   <section class="testimonial-section pt-5">
+      <div class="title mb-5">
+      <p class="fs-2 text-center container-lg">Testimonials</p>
+      <div class="testimonial-container d-flex flex-md-wrap flex-column flex-lg-row justify-content-evenly p-3">
+         <div class="testimonial-item container-md mx-auto p-5 mb-5">
+            <img class="img-fluid" src="assets/images/lebron.jpg" alt="">
+            <p class="fs-5">Lebron James</p>
+            <div class="about text-justify fs-bolder">
+            <p class="text-left">
+               "I recently sold my old car on this website and it was such a smooth experience. The website was easy to navigate and the listing process was straightforward. Within a few days, I had several interested buyers and ended up selling my car for a fair price. Would definitely recommend this website to anyone looking to sell their car."
+            </p>
+            </div>
+         </div>
+         <div class="testimonial-item container-md mx-auto p-5 mb-5">
+            <img class="img-fluid" src="assets/images/steph.jpg" alt="">
+            <p class="fs-5">Stephen Curry</p>
+            <div class="about text-justify fs-bolder">
+            <p class="text-left">
+               "I was in the market for a used car and stumbled upon this website. I was pleasantly surprised by the selection of cars available and the detailed information provided for each listing. I was able to find the perfect car for my needs and the whole buying process was easy and hassle-free. Would definitely use this website again in the future."
+            </p>
+            </div>
+         </div>
+         <div class="testimonial-item container-md mx-auto p-5 mb-5">
+            <img class="img-fluid" src="assets/images/kawhi.jpg" alt="">
+            <p class="fs-5">Kawhi Leonard</p>
+            <div class="about text-justify fs-bolder">
+            <p class="text-left">
+               "I had a great experience buying and selling cars on this website. The platform is user-friendly and the customer support team was very responsive and helpful whenever I had questions or concerns. I was able to sell my old car quickly and found a great deal on a new one thanks to this website. Highly recommend it to anyone in the market for a used car."
+            </p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+ <!-- Footer -->
+ <footer class="mb-3">
+   <div class="footer-nav d-flex flex-wrap pb-5 justify-content-center">
+   <div class="footer-logo d-flex flex-column mb-4">
+       <a href="index.html" class="text-decoration-none text-light fs-3 mx-auto"><img src="assets/images/logo.png" alt=""></a>
+       <div class="about text-justify fs-bolder">
+         <p class="my-3">RideXChange is well known for showcasing 2nd hand cars that helps seller to have a platform, to advertise cars for potential customer.</p>
+       </div>
+       <div class="icon container d-flex justify-content-center">
+         <a href="https://www.facebook.com" class="text-light fs-3 ps-2 pe-2 text-decoration-none">
+             <i class="fa-brands fa-square-facebook"></i>
+         </a>
+         <a href="https://www.instagram.com" class="text-light fs-3 ps-2 pe-2 text-decoration-none">
+             <i class="fa-brands fa-square-instagram"></i>
+         </a>
+         <a href="https://www.twitter.com" class="text-light fs-3 ps-2 pe-2 text-decoration-none">
+             <i class="fa-brands fa-square-twitter"></i>
+         </a>
+         <a href="https://www.linkedin.com" class="text-light fs-3 ps-2 pe-2 text-decoration-none">
+             <i class="fa-brands fa-linkedin"></i>
+         </a>
+     </div>
+   </div>
+   <div class="footer-links d-flex flex-column text-center text-md-center mb-4">
+       <p class="fs-5">Company</p>
+       <div class="bottom-link-container d-flex flex-column gap-3">
+       <a class=" text-decoration-none text-white" href="index.html">Home</a>
+       <a class=" text-decoration-none text-white" href="shop.html">Car</a>
+       <a class=" text-decoration-none text-white" href="services.html">Services</a>
+       <a class=" text-decoration-none text-white" href="about.html">About</a>
+       </div>
+   </div>
+   <div class="footer-contact d-flex flex-column mb-4">
+       <p class="fs-5 mx-auto">Get in touch</p>
+       <p class="mx-5">Free customer care  <br> +(63)943 123 5432</p>
+       <p class="mx-5">Need live support?  <br> Ridexchange2023@gmail.com</p>
+   </div>
+   <div class="footer-email text-center mb-4">
+       <p class="fs-5 mx-5">News letter</p>
+       <p>Subscribe for future updates</p>
+       <input type="email" placeholder="Your email here">
+   </div>
+   </div>
+   <div class="copyright-container d-flex flex-column flex-md-row justify-content-around pt-3">
+   <div class="copyright-item text-white mx-auto mb-3">
+       <span class="mx-2">English</span>
+       <span class="mx-2">Privacy Policy</span>
+       <span class="mx-2">Support</span>
+   </div>
+   <div class="copyright-item text-white mx-auto">
+       <p>Copyright 2023 RideXChange. All rights reserved</p>
+   </div>
+   </div>
+</footer>
+
+   <script src="assets/script/main.js" type="module" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   <script src="assets/script/session.js" type="module"></script>
+   
+</body>
+</html>
+
+

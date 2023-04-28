@@ -1,0 +1,16 @@
+{
+    "cars": [
+        {
+            "carBrand": "Toyota",
+            "model": "Wigo",
+            "year": "2016",
+            "color": "White",
+            "transition": "Auto",
+            "fuel": "Diesel",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tellus a massa mollis accumsan. Ut eget nisi vel risus tincidunt faucibus.",
+            "price": "250,000",
+            "image": "toyotawigo.jpg"
+        }
+    
+    ]
+}
